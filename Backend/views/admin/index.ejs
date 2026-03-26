@@ -27,16 +27,89 @@
           <p class="text-slate-400 text-lg leading-relaxed mb-8 font-medium">
             Manage your website content, update services, and monitor your visual gallery all from one central command center.
           </p>
-          <div class="flex flex-wrap justify-center md:justify-start gap-4">
-            <a href="/home" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-2xl font-bold transition-all shadow-xl shadow-emerald-500/20 flex items-center space-x-3 group">
-              <span>Go to Settings</span>
-              <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-            </a>
+          <div class="flex flex-wrap items-center gap-4">
+            <button onclick="seedDemoData()" id="seedBtn" class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-2xl font-bold transition-all flex items-center space-x-3 group">
+              <i class="fas fa-database text-xs text-emerald-400"></i>
+              <span>Seed Demo Data</span>
+            </button>
+            <p id="seedMsg" class="hidden text-emerald-400 bg-emerald-500/10 px-4 py-2 rounded-xl text-sm font-bold border border-emerald-500/20"></p>
           </div>
         </div>
       </div>
 
-      <!-- Quick Stats / Cards -->
+      <!-- Real-time Stats -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="glass-card p-6 rounded-3xl border border-slate-100 flex items-center space-x-4">
+          <div class="p-4 bg-emerald-50 text-emerald-600 rounded-2xl">
+            <i class="fas fa-layer-group text-xl"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Total Services</p>
+            <h4 class="text-2xl font-black text-slate-900">12</h4>
+          </div>
+        </div>
+        <div class="glass-card p-6 rounded-3xl border border-slate-100 flex items-center space-x-4">
+          <div class="p-4 bg-blue-50 text-blue-600 rounded-2xl">
+            <i class="fas fa-images text-xl"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Gallery Items</p>
+            <h4 class="text-2xl font-black text-slate-900">48</h4>
+          </div>
+        </div>
+        <div class="glass-card p-6 rounded-3xl border border-slate-100 flex items-center space-x-4">
+          <div class="p-4 bg-amber-50 text-amber-600 rounded-2xl">
+            <i class="fas fa-users text-xl"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Active Clients</p>
+            <h4 class="text-2xl font-black text-slate-900">24</h4>
+          </div>
+        </div>
+        <div class="glass-card p-6 rounded-3xl border border-slate-100 flex items-center space-x-4">
+          <div class="p-4 bg-purple-50 text-purple-600 rounded-2xl">
+            <i class="fas fa-chart-line text-xl"></i>
+          </div>
+          <div>
+            <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Site Growth</p>
+            <h4 class="text-2xl font-black text-slate-900">+14%</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+        <!-- Growth Chart -->
+        <div class="glass-card p-8 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50">
+          <div class="flex items-center justify-between mb-8">
+            <div>
+              <h3 class="text-xl font-black text-slate-900">Visitor Insights</h3>
+              <p class="text-sm text-slate-500 font-medium">Monthly performance overview</p>
+            </div>
+            <span class="px-4 py-2 bg-emerald-50 text-emerald-600 rounded-xl text-xs font-bold">2026 Reports</span>
+          </div>
+          <canvas id="growthChart" height="250"></canvas>
+        </div>
+
+        <!-- Distribution Chart -->
+        <div class="glass-card p-8 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50">
+          <div class="flex items-center justify-between mb-8">
+            <div>
+              <h3 class="text-xl font-black text-slate-900">Content Distribution</h3>
+              <p class="text-sm text-slate-500 font-medium">Resources by category</p>
+            </div>
+            <i class="fas fa-pie-chart text-slate-300"></i>
+          </div>
+          <div class="flex items-center justify-center">
+            <div class="w-full max-w-[300px]">
+              <canvas id="distributionChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <h3 class="text-2xl font-black text-slate-900 mb-6">Quick Management</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Home Section Card -->
         <a href="/home" class="glass-card p-6 rounded-[2rem] border border-slate-100 hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 group">
@@ -53,7 +126,7 @@
         <!-- Services Section Card -->
         <a href="/services" class="glass-card p-6 rounded-[2rem] border border-slate-100 hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-4">
-            <div class="p-4 bg-blue-50 text-emerald-600 rounded-2xl group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+            <div class="p-4 bg-blue-50 text-blue-600 rounded-2xl group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
               <i class="fas fa-th-list text-xl"></i>
             </div>
             <i class="fas fa-chevron-right text-slate-300 group-hover:text-emerald-500 transition-colors"></i>
@@ -65,7 +138,7 @@
         <!-- Contact Section Card -->
         <a href="/contact" class="glass-card p-6 rounded-[2rem] border border-slate-100 hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 group">
           <div class="flex items-center justify-between mb-4">
-            <div class="p-4 bg-purple-50 text-emerald-600 rounded-2xl group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+            <div class="p-4 bg-purple-50 text-purple-600 rounded-2xl group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
               <i class="fas fa-envelope text-xl"></i>
             </div>
             <i class="fas fa-chevron-right text-slate-300 group-hover:text-emerald-500 transition-colors"></i>
@@ -76,5 +149,86 @@
       </div>
     </div>
   </main>
+
+  <!-- Chart Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Growth Chart
+    const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+    new Chart(ctxGrowth, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Website Visitors',
+          data: [1200, 1900, 1500, 2500, 2200, 3000],
+          borderColor: '#059669',
+          backgroundColor: 'rgba(16, 185, 129, 0.1)',
+          fill: true,
+          tension: 0.4,
+          borderWidth: 4,
+          pointBackgroundColor: '#fff',
+          pointBorderColor: '#059669',
+          pointBorderWidth: 2,
+          pointRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, grid: { display: false } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+
+    // Distribution Chart
+    const ctxDist = document.getElementById('distributionChart').getContext('2d');
+    new Chart(ctxDist, {
+      type: 'doughnut',
+      data: {
+        labels: ['Services', 'Gallery', 'Clients', 'FAQs'],
+        datasets: [{
+          data: [12, 48, 24, 15],
+          backgroundColor: ['#059669', '#3b82f6', '#f59e0b', '#8b5cf6'],
+          borderWidth: 0,
+          hoverOffset: 20
+        }]
+      },
+      options: {
+        responsive: true,
+        cutout: '75%',
+        plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, padding: 20, font: { weight: 'bold' } } } }
+      }
+    });
+
+    async function seedDemoData() {
+      const btn = document.getElementById('seedBtn');
+      const msg = document.getElementById('seedMsg');
+      
+      btn.disabled = true;
+      btn.opacity = '0.5';
+      btn.innerHTML = '<i class="fas fa-spinner animate-spin"></i> <span>Seeding...</span>';
+
+      try {
+        const response = await fetch('/seed-data', { method: 'POST' });
+        const data = await response.json();
+        
+        if (data.success) {
+          msg.innerHTML = '<i class="fas fa-check-circle"></i> ' + data.message;
+          msg.classList.remove('hidden');
+          btn.classList.add('hidden');
+          setTimeout(() => window.location.reload(), 2000);
+        } else {
+          alert('Error: ' + data.error);
+          btn.disabled = false;
+        }
+      } catch (err) {
+        alert('Seeding failed: ' + err.message);
+        btn.disabled = false;
+      }
+    }
+  </script>
 
   <%- include('partials/footer') %>
