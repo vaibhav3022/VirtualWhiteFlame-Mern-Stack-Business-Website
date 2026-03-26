@@ -20,7 +20,7 @@ export default function Services() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-slate-50 pt-20">
+    <main className="min-h-screen bg-slate-50 pt-24">
       <Hero />
 
       {/* ===== SERVICES SECTION ===== */}

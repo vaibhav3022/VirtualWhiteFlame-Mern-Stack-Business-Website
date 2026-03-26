@@ -69,10 +69,8 @@ function Navbar() {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[500] transition-all duration-300 bg-white border-b border-slate-100 ${
-      isMobileMenuOpen || isScrolled ? "py-3 shadow-lg" : "py-4 shadow-sm"
-    }`}>
-      <div className="container mx-auto px-6 flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-[500] transition-all duration-300 bg-white border-b border-slate-100 shadow-sm p-6">
+      <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <NavLink to="/" className="flex items-center space-x-2 group">
           <div className="relative overflow-hidden rounded-xl bg-white p-1 shadow-sm border border-slate-100">

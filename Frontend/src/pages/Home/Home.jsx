@@ -10,7 +10,7 @@ import NewsBlogs from "./NewBlogs";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f8fafc] bg-mesh pt-20">
+    <main className="min-h-screen bg-[#f8fafc] bg-mesh pt-24">
       {/* Hero Slider Section */}
       <section className="px-4 md:px-8">
         <Slider />
