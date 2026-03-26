@@ -51,7 +51,7 @@ function Navbar() {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-[500] transition-all duration-300 ${
       isScrolled ? "bg-white/80 backdrop-blur-md py-3 shadow-lg border-b border-slate-100" : "bg-transparent py-5"
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -117,7 +117,7 @@ function Navbar() {
       </div>
 
       {/* Mobile Menu Sidebar */}
-      <div className={`fixed inset-0 z-[200] md:hidden transition-all duration-300 ${isMobileMenuOpen ? "visible" : "invisible"}`}>
+      <div className={`fixed inset-0 z-[9999] md:hidden transition-all duration-300 ${isMobileMenuOpen ? "visible" : "invisible"}`}>
         {/* Backdrop */}
         <div 
           className={`absolute inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`}
