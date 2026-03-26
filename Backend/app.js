@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const upload = require('express-fileupload');
 const cors = require('cors');
+const session = require('express-session');
 const path = require('path');
 const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
 
@@ -13,6 +14,14 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(upload());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Session Configuration
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'virtual-white-flame-secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // Set to true if using HTTPS
+}));
 
 // Set EJS view engine
 app.set("view engine", "ejs");
