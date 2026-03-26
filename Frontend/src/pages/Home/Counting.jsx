@@ -1,3 +1,4 @@
+import { API_URL } from "../../config";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -10,7 +11,7 @@ export default function Counting() {
 
   const loadData = async () => {
    
-      const result = await axios.get("http://localhost:1000/counting_api");
+      const result = await axios.get(`${API_URL}/counting_api`);
       // console.log(result.data.da);
       setCount(result.data.da); // store array of all counts
   };

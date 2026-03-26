@@ -1,3 +1,4 @@
+import { API_URL } from "../../config";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -10,7 +11,7 @@ export default function WorkingProcess() {
 
   const loadData = async () => {
     try {
-      const result = await axios.get("http://localhost:1000/working_api");
+      const result = await axios.get(`${API_URL}/working_api`);
       // console.log(result.data.da);
 
       setWork(result.data.da); // store API array
@@ -40,7 +41,7 @@ export default function WorkingProcess() {
                   style={{ width: "100%" }}
                 >
                   <img
-                    src={`http://localhost:1000/${w.working_img}`}
+                    src={`${API_URL}/${w.working_img}`}
                     alt={w.working_name}
                     className="card-img-top"
                     style={{ height: "200px", objectFit: "cover" }}

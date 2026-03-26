@@ -1,74 +1,27 @@
-import react from "react";
+import React from "react";
 import Hero from "./Hero";
 import GalleryCard from "./GalleryCard";
 
-export default function Gallery()
-{
-    return(
-        <>
-  {/* ===== Inline Styles ===== */}
-      <style>
-        {`
-          .hero-img {
-            width: 100%;
-            height: auto;
-          }
-          .gallery-heading {
-            color: #0b6623;
-            font-weight: 700;
-            text-align: center;
-            margin: 40px 0 10px;
-          }
-          .filter-btn {
-            color: #0b6623;
-            font-weight: 600;
-            border: none;
-            background: transparent;
-            margin: 0 8px;
-          }
-          .filter-btn:hover,
-          .filter-btn.active {
-            text-decoration: underline;
-          }
-          .gallery-card {
-            background-color: #e8ffe8;
-            border: none;
-            padding: 10px;
-            transition: 0.3s ease;
-            text-align: center;
-            border-radius: 6px;
-          }
-          .gallery-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-          }
-          .gallery-title {
-            color: #0b6623;
-            font-weight: 600;
-            margin-top: 10px;
-            font-size: 1rem;
-          }
-        `}
-      </style>
-
-
-
-    <div className="container-fluid p-0">
-        <div className="row">
-            <div className="col-12">
-                <Hero/>
-            </div>
+export default function Gallery() {
+  return (
+    <main className="min-h-screen bg-slate-50">
+      <Hero />
+      
+      <section className="py-24">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h3 className="text-emerald-600 font-bold uppercase tracking-[0.2em] text-sm mb-4">Our Showcase</h3>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+              Visual <span className="gradient-text">Journey</span>
+            </h2>
+            <p className="text-slate-500 text-lg max-w-2xl mx-auto leading-relaxed">
+              Explore our facilities, products, and environmental impact through our curated gallery.
+            </p>
+          </div>
+          
+          <GalleryCard />
         </div>
-    </div>
-
-
-
-<section>
-    <GalleryCard/>
-</section>
-
-
-
-        </>
-    )
+      </section>
+    </main>
+  );
 }

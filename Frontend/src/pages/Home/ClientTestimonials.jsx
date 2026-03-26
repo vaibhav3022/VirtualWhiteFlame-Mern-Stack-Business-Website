@@ -1,3 +1,4 @@
+import { API_URL } from "../../config";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -9,7 +10,7 @@ export default function ClientTestimonials() {
   }, []);
 
   const loadData = async () => {
-    const result = await axios.get("http://localhost:1000/client_api");
+    const result = await axios.get(`${API_URL}/client_api`);
     setClient(result.data.da[0]); // Only 1 record
   };
 
@@ -39,7 +40,7 @@ export default function ClientTestimonials() {
             {client && (
               <div className="mb-4">
                 <img
-                  src={`http://localhost:1000/${client.client_logo}`}
+                  src={`${API_URL}/${client.client_logo}`}
                   alt="Client Logo"
                   style={{ width: "90px" }}
                   className="img-fluid"
@@ -90,7 +91,7 @@ export default function ClientTestimonials() {
             {/* Machine Image */}
             {client && (
               <img
-                src={`http://localhost:1000/${client.client_img}`}
+                src={`${API_URL}/${client.client_img}`}
                 alt="Client Machine"
                 className="img-fluid"
                 style={{

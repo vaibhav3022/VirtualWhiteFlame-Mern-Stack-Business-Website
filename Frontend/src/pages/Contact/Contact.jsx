@@ -1,169 +1,139 @@
-import react from "react";
+import React from "react";
 import Hero from "./Hero";
-import { Envelope, Telephone, GeoAlt, Person, ChatDots } from "react-bootstrap-icons";
+import { HiMail, HiPhone, HiLocationMarker, HiUser, HiChatAlt2 } from "react-icons/hi";
+import { FaWhatsapp } from "react-icons/fa";
 
-export default function Contact()
-{
-    return(
-        <>
-         {/* ===== Inline CSS ===== */}
-      <style>
-        {`
-          .hero-img {
-            width: 100%;
-            height: auto;
-          }
-          .contact-section {
-            background-color: #f7f8f2;
-            padding: 50px 0;
-          }
-          .contact-heading {
-            color: #0b6623;
-            font-weight: 700;
-            margin-bottom: 25px;
-          }
-          .contact-subtitle {
-            color: #0b6623;
-            font-weight: 600;
-            font-size: 1.2rem;
-            margin-top: 20px;
-          }
-          .contact-info p {
-            color: #333;
-            font-size: 0.95rem;
-            margin-bottom: 8px;
-          }
-          .form-control {
-            border-radius: 0;
-            border: 1px solid #ccc;
-          }
-          .form-control:focus {
-            border-color: #0b6623;
-            box-shadow: none;
-          }
-          .send-btn {
-            background-color: #0b6623;
-            color: #fff;
-            font-weight: 600;
-            border: none;
-            border-radius: 25px;
-            padding: 10px 25px;
-          }
-          .send-btn:hover {
-            background-color: #094d1c;
-          }
-          .whatsapp-btn {
-            background-color: #25d366;
-            color: #fff;
-            font-weight: 600;
-            border: none;
-            border-radius: 25px;
-            padding: 10px 25px;
-            margin-left: 10px;
-          }
-          .whatsapp-btn:hover {
-            background-color: #1eb857;
-          }
-          .modal-title {
-            color: #0b6623;
-            font-weight: 700;
-          }
-          .enquiry-btn {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            background-color: #0b6623;
-            border: none;
-            color: white;
-            border-radius: 50%;
-            width: 55px;
-            height: 55px;
-            font-size: 22px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-          }
-          .enquiry-btn:hover {
-            background-color: #094d1c;
-          }
-        `}
-      </style>
+export default function Contact() {
+  return (
+    <main className="min-h-screen bg-slate-50">
+      <Hero />
 
+      {/* ===== CONTACT SECTION ===== */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-16">
+            
+            {/* ===== LEFT SIDE: Info Cards ===== */}
+            <div className="lg:w-5/12 space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-emerald-600 font-bold uppercase tracking-[0.2em] text-sm">Direct Contact</h3>
+                <h2 className="text-4xl font-black text-slate-900">Get in <span className="gradient-text">Touch</span></h2>
+                <p className="text-slate-500 text-lg">Our team is ready to assist you with any inquiries regarding our sustainable energy solutions.</p>
+              </div>
 
-      <div className="container-fluid">
-        <div className="row">
-            <div className="col-md-12">
-                <Hero/>
-            </div>
-        </div>
-      </div>
+              <div className="space-y-6">
+                {/* Email/Phone Card */}
+                <div className="glass-card p-6 flex items-start space-x-4 hover:border-emerald-500/30 transition-colors">
+                  <div className="p-3 bg-emerald-50 rounded-xl text-emerald-600">
+                    <HiMail size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">Email & Phone</h4>
+                    <p className="text-slate-600 text-sm mb-1">sales@virtualwhiteflame.com</p>
+                    <p className="text-slate-600 text-sm mb-1">operation.virtualwhiteflame@gmail.com</p>
+                    <p className="text-emerald-600 font-bold mt-2">+91 9423390308, 9420950022</p>
+                  </div>
+                </div>
 
-
-
-      
-            {/* ===== CONTACT SECTION ===== */}
-            <div className="contact-section">
-              <div className="container">
-                <div className="row">
-                  {/* ===== LEFT SIDE ===== */}
-                  <div className="col-md-5 contact-info">
-                    <h4 className="contact-heading">Email / Phone</h4>
-                    <p><Envelope className="me-2 text-success" /> sales@virtualwhiteflame.com</p>
-                    <p><Envelope className="me-2 text-success" /> operation.virtualwhiteflame@gmail.com</p>
-                    <p><Telephone className="me-2 text-success" /> 9423390308, 9420950022</p>
-      
-                    <h4 className="contact-subtitle">Head Office</h4>
-                    <p>
-                      <GeoAlt className="me-2 text-success" />
+                {/* Head Office 1 */}
+                <div className="glass-card p-6 flex items-start space-x-4 hover:border-emerald-500/30 transition-colors">
+                  <div className="p-3 bg-emerald-50 rounded-xl text-emerald-600">
+                    <HiLocationMarker size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">Head Office</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       Flat no.2, Plot No.1, Pushkar Apartment, Savedi, Pipeline Road, Ahmednagar - 414003
                     </p>
-      
-                    <h4 className="contact-subtitle">Head Office 2</h4>
-                    <p>
-                      <GeoAlt className="me-2 text-success" />
+                  </div>
+                </div>
+
+                {/* Head Office 2 */}
+                <div className="glass-card p-6 flex items-start space-x-4 hover:border-emerald-500/30 transition-colors">
+                  <div className="p-3 bg-emerald-50 rounded-xl text-emerald-600">
+                    <HiLocationMarker size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 mb-2">Branch Office</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       Shop No.01, Plot No.97, Sector 20, Ulwe Node, Navi Mumbai - 410206
                     </p>
-                  </div>
-      
-                  {/* ===== RIGHT SIDE ===== */}
-                  <div className="col-md-7">
-                    <h4 className="contact-heading text-center text-md-start">Send A Message</h4>
-                    <form>
-                      <div className="row mb-3">
-                        <div className="col-md-6 mb-3 mb-md-0">
-                          <div className="input-group">
-                            <input type="text" className="form-control" placeholder="Full Name Here" />
-                            <span className="input-group-text"><Person /></span>
-                          </div>
-                        </div>
-                        <div className="col-md-6">
-                          <div className="input-group">
-                            <input type="email" className="form-control" placeholder="Email Here" />
-                            <span className="input-group-text"><Envelope /></span>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div className="mb-3">
-                        <input type="text" className="form-control" placeholder="Subject" />
-                      </div>
-      
-                      <div className="mb-3">
-                        <textarea className="form-control" rows="4" placeholder="Comments"></textarea>
-                      </div>
-      
-                      <div className="d-flex justify-content-center justify-content-md-start">
-                        <button type="button" className="send-btn">SEND MESSAGE</button>
-                        <button type="button" className="whatsapp-btn ms-2">
-                          <i className="bi bi-whatsapp"></i> WhatsApp Now
-                        </button>
-                      </div>
-                    </form>
                   </div>
                 </div>
               </div>
             </div>
-      
-          
-      
-        </>
-    )
+
+            {/* ===== RIGHT SIDE: Contact Form ===== */}
+            <div className="lg:w-7/12">
+              <div className="glass-card p-10 bg-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full -mr-16 -mt-16" />
+                
+                <h4 className="text-2xl font-bold text-slate-900 mb-8">Send A Message</h4>
+                
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="relative group">
+                      <HiUser className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+                      <input 
+                        type="text" 
+                        className="w-full pl-12 pr-4 py-4 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" 
+                        placeholder="Full Name" 
+                      />
+                    </div>
+                    <div className="relative group">
+                      <HiMail className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+                      <input 
+                        type="email" 
+                        className="w-full pl-12 pr-4 py-4 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" 
+                        placeholder="Email Address" 
+                      />
+                    </div>
+                  </div>
+
+                  <div className="relative group">
+                    <HiChatAlt2 className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-emerald-500 transition-colors" />
+                    <input 
+                      type="text" 
+                      className="w-full pl-12 pr-4 py-4 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" 
+                      placeholder="Subject" 
+                    />
+                  </div>
+
+                  <div className="relative group">
+                    <textarea 
+                      className="w-full p-4 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all min-h-[160px]" 
+                      placeholder="Your Message"
+                    ></textarea>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button type="button" className="premium-button-primary flex-1 py-4 justify-center">
+                      Send Message
+                    </button>
+                    <button type="button" className="flex items-center justify-center space-x-2 px-8 py-4 bg-[#25d366] text-white font-bold rounded-2xl hover:bg-[#1eb857] transition-all shadow-lg shadow-emerald-200">
+                      <FaWhatsapp size={20} />
+                      <span>WhatsApp Now</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="h-[450px] w-full bg-slate-200 relative">
+        <div className="absolute inset-0 bg-slate-900/10 z-10 pointer-events-none" />
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15060.052827139152!2d74.7214713!3d19.1069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcba076e0ef5db%3A0x640b3b4f62b48d28!2sSavedi!5e0!3m2!1sen!2sin!4v1711425600000!5m2!1sen!2sin" 
+          width="100%" 
+          height="100%" 
+          style={{ border: 0 }} 
+          allowFullScreen="" 
+          loading="lazy"
+        ></iframe>
+      </section>
+    </main>
+  );
 }

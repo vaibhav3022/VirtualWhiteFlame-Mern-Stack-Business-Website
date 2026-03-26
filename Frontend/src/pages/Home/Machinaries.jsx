@@ -1,3 +1,4 @@
+import { API_URL } from "../../config";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -9,7 +10,7 @@ export default function Machinaries() {
   }, []);
 
   const loadData = async () => {
-    const result = await axios.get("http://localhost:1000/machines_api");
+    const result = await axios.get(`${API_URL}/machines_api`);
     setMachines(result.data.da); // API data
   };
 
@@ -32,7 +33,7 @@ export default function Machinaries() {
 
                 {/* Image */}
                 <img
-                  src={`http://localhost:1000/${m.working_img}`}
+                  src={`${API_URL}/${m.working_img}`}
                   alt={m.machines_name}
                   className="card-img-top"
                   style={{ height: "260px", objectFit: "cover" }}

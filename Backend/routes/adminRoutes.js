@@ -1,0 +1,9 @@
+const express = require('express');
+const router = express.Router();
+router.get('/', (req, res) => res.render('admin/index.ejs'));
+router.get('/home', (req, res) => res.render('admin/home.ejs'));
+router.get('/about', (req, res) => res.render('admin/about.ejs'));
+router.get('/services', (req, res) => res.render('admin/services.ejs'));
+router.get('/gallery', (req, res) => res.render('admin/gallery.ejs'));
+router.get('/contact', (req, res) => res.render('admin/contact.ejs'));
+module.exports = router;

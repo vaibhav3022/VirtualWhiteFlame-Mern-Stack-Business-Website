@@ -1,3 +1,4 @@
+import { API_URL } from "../../config";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
@@ -10,7 +11,7 @@ export default function PlantsCard() {
 
   const loadData = async () => {
     
-      const result = await axios.get("http://localhost:1000/plants_api");
+      const result = await axios.get(`${API_URL}/plants_api`);
       setPlants(result.data.da);
    
   };
@@ -38,7 +39,7 @@ export default function PlantsCard() {
                 >
                   <div className="col-4">
                     <img
-                      src={`http://localhost:1000/${p.plants_img}`}
+                      src={`${API_URL}/${p.plants_img}`}
                       alt={p.plants_name}
                       className="img-thumbnail w-100"
                       style={{
