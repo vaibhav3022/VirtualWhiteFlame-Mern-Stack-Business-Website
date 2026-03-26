@@ -36,10 +36,19 @@ function Navbar() {
   // Lock scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
     } else {
+      document.documentElement.style.overflow = "unset";
       document.body.style.overflow = "unset";
+      document.body.style.touchAction = "auto";
     }
+    return () => {
+      document.documentElement.style.overflow = "unset";
+      document.body.style.overflow = "unset";
+      document.body.style.touchAction = "auto";
+    };
   }, [isMobileMenuOpen]);
 
   const handleLogout = () => {
@@ -61,7 +70,7 @@ function Navbar() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-[500] transition-all duration-300 ${
-      isScrolled ? "bg-white/80 backdrop-blur-md py-3 shadow-lg border-b border-slate-100" : "bg-transparent py-5"
+      isMobileMenuOpen || isScrolled ? "bg-white py-3 shadow-lg border-b border-slate-100" : "bg-transparent py-5"
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}

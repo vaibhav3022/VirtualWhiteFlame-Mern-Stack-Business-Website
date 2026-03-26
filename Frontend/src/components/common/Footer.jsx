@@ -83,7 +83,7 @@ export default function Footer() {
                 </div>
                 <div className="text-sm">
                   <span className="block text-slate-400 mb-1 font-medium">Phone Number</span>
-                  <span className="text-white">+91 9423390308</span>
+                  <span className="text-white">+91 9021850960</span>
                 </div>
               </li>
               <li className="flex items-start space-x-3 group">
@@ -92,7 +92,7 @@ export default function Footer() {
                 </div>
                 <div className="text-sm">
                   <span className="block text-slate-400 mb-1 font-medium">Email Address</span>
-                  <span className="text-white truncate">sales@virtualwhiteflame.com</span>
+                  <span className="text-white truncate">vaibhavdhotre682@gmail.com</span>
                 </div>
               </li>
             </ul>
@@ -128,7 +128,7 @@ export default function Footer() {
       {/* Floating Action Buttons */}
       <div className="fixed bottom-8 right-8 z-[100] flex flex-col gap-4 animate-bounce-slow">
         <a
-          href="https://wa.me/9423390308"
+          href="https://wa.me/919021850960"
           target="_blank"
           rel="noopener noreferrer"
           className="w-14 h-14 rounded-2xl bg-[#25D366] text-white flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300"

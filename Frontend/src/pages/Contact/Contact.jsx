@@ -29,9 +29,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-900 mb-2">Email & Phone</h4>
-                    <p className="text-slate-600 text-sm mb-1">sales@virtualwhiteflame.com</p>
+                    <p className="text-slate-600 text-sm mb-1">vaibhavdhotre682@gmail.com</p>
                     <p className="text-slate-600 text-sm mb-1">operation.virtualwhiteflame@gmail.com</p>
-                    <p className="text-emerald-600 font-bold mt-2">+91 9423390308, 9420950022</p>
+                    <p className="text-emerald-600 font-bold mt-2">+91 9021850960, 9420950022</p>
                   </div>
                 </div>
 
