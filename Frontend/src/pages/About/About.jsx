@@ -4,7 +4,7 @@ import FAQ from "./FAQ";
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-slate-50 pt-20">
       <Hero />
 
       {/* About Section */}
